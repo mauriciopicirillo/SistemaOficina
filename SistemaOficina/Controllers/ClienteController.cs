@@ -1,13 +1,11 @@
 ﻿using SistemaOficina.Data;
-using SistemaOficina.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Windows.Forms; // Adicione esta linha
 
 namespace SistemaOficina.Controllers
 {
+    [Table("tbclientes")]
     internal class ClienteController
     {
         private readonly DataContext dataContext;
@@ -29,11 +27,14 @@ namespace SistemaOficina.Controllers
 
                 // Adicione lógica para adicionar o cliente ao banco de dados
                 dataContext.AdicionarCliente(novoCliente);
+
+                // Exibe a MessageBox de sucesso
+                MessageBox.Show($"Cliente {nome} foi adicionado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                // Trate a exceção de acordo com as necessidades do seu aplicativo
-                Console.WriteLine($"Erro ao salvar cliente: {ex.Message}");
+                // Exibe a MessageBox de erro com informações adicionais da exceção interna
+                MessageBox.Show($"Erro ao salvar cliente: {ex.Message}\n\nDetalhes da exceção interna: {ex.InnerException?.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -44,7 +45,7 @@ namespace SistemaOficina.Controllers
             try
             {
                 // Adicione lógica de validação, se necessário
-                Models.Cliente clienteAtualizado = new Models.Cliente(idCliente, nome, cpf, telefone, endereco, numero,
+                Models.Cliente clienteAtualizado = new Models.Cliente(nome, cpf, telefone, endereco, numero,
                                                                       bairro, cidade, uf, cep, email);
 
                 // Adicione lógica para atualizar o cliente no banco de dados

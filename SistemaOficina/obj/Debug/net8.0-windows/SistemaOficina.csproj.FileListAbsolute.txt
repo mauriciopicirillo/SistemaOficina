@@ -78,3 +78,6 @@ D:\Documentos\Arquivo de Clientes\R\Ricardo Mecanico\SistemaOficina\SistemaOfici
 D:\Documentos\Arquivo de Clientes\R\Ricardo Mecanico\SistemaOficina\SistemaOficina\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Documentos\Arquivo de Clientes\R\Ricardo Mecanico\SistemaOficina\SistemaOficina\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Documentos\Arquivo de Clientes\R\Ricardo Mecanico\SistemaOficina\SistemaOficina\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Documentos\Arquivo de Clientes\R\Ricardo Mecanico\SistemaOficina\SistemaOficina\obj\Debug\net8.0-windows\SistemaOficina.sourcelink.json
+D:\Documentos\Arquivo de Clientes\R\Ricardo Mecanico\SistemaOficina\SistemaOficina\bin\Debug\net8.0-windows\MySqlConnector.dll
+D:\Documentos\Arquivo de Clientes\R\Ricardo Mecanico\SistemaOficina\SistemaOficina\bin\Debug\net8.0-windows\Pomelo.EntityFrameworkCore.MySql.dll

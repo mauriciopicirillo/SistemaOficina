@@ -4,11 +4,12 @@
     {
         public Cliente()
         {
+            
         }
 
-        public Cliente(int idcli, string nomecli, string cpfcli, string fonecli, string endcli, string numerocli, string bairrocli, string cidadecli, string estadocli, string cepcli, string emailcli)
+        public Cliente(string nomecli, string cpfcli, string fonecli, string endcli, string numerocli, string bairrocli, string cidadecli, string estadocli, string cepcli, string emailcli)
         {
-            Idcli = idcli;
+            
             Nomecli = nomecli;
             Cpfcli = cpfcli;
             Fonecli = fonecli;
@@ -19,7 +20,6 @@
             Estadocli = estadocli;
             Cepcli = cepcli;
             Emailcli = emailcli;
-
         }
 
         public int Idcli { get; set; }
@@ -33,8 +33,5 @@
         public string Estadocli { get; set; }
         public string Cepcli { get; set; }
         public string Emailcli { get; set; }
-
     }
-
 }
-

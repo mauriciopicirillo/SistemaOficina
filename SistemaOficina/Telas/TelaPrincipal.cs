@@ -48,6 +48,8 @@ namespace SistemaOficina.Telas
             string email = txtEmail.Text;
 
             clienteController.SalvarCliente(nome, cpf, telefone, endereco, numero, bairro, cidade, uf, cep, email);
+            
+           
         }
     }
 }

@@ -7,31 +7,31 @@
             
         }
 
-        public Cliente(string nomecli, string cpfcli, string fonecli, string endcli, string numerocli, string bairrocli, string cidadecli, string estadocli, string cepcli, string emailcli)
+        public Cliente(string nome, string cpf, string fone, string end, string numero, string bairro, string cidade, string estado, string cep, string email)
         {
             
-            Nomecli = nomecli;
-            Cpfcli = cpfcli;
-            Fonecli = fonecli;
-            Endcli = endcli;
-            Numerocli = numerocli;
-            Bairrocli = bairrocli;
-            Cidadecli = cidadecli;
-            Estadocli = estadocli;
-            Cepcli = cepcli;
-            Emailcli = emailcli;
+            Nome = nome;
+            Cpf = cpf;
+            Fone = fone;
+            End = end;
+            Numero = numero;
+            Bairro = bairro;
+            Cidade = cidade;
+            Estado = estado;
+            Cep = cep;
+            Email = email;
         }
 
         public int Idcli { get; set; }
-        public string Nomecli { get; set; }
-        public string Cpfcli { get; set; }
-        public string Fonecli { get; set; }
-        public string Endcli { get; set; }
-        public string Numerocli { get; set; }
-        public string Bairrocli { get; set; }
-        public string Cidadecli { get; set; }
-        public string Estadocli { get; set; }
-        public string Cepcli { get; set; }
-        public string Emailcli { get; set; }
+        public string Nome { get; set; }
+        public string Cpf { get; set; }
+        public string Fone { get; set; }
+        public string End { get; set; }
+        public string Numero { get; set; }
+        public string Bairro { get; set; }
+        public string Cidade { get; set; }
+        public string Estado { get; set; }
+        public string Cep { get; set; }
+        public string Email { get; set; }
     }
 }

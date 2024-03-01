@@ -1,11 +1,9 @@
-﻿using SistemaOficina.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SistemaOficina.Data;
 using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Windows.Forms; // Adicione esta linha
 
 namespace SistemaOficina.Controllers
 {
-    [Table("tbclientes")]
     internal class ClienteController
     {
         private readonly DataContext dataContext;
@@ -16,62 +14,86 @@ namespace SistemaOficina.Controllers
         }
 
         // Método para salvar um novo cliente
-        public void SalvarCliente(string nome, string cpf, string telefone, string endereco,
-                                  string numero, string bairro, string cidade, string uf, string cep, string email)
+        public string SalvarCliente(string nome, string cpf, string telefone, string endereco,
+                                    string numero, string bairro, string cidade, string estado, string cep, string email)
         {
             try
             {
-                // Adicione lógica de validação, se necessário
-                Models.Cliente novoCliente = new Models.Cliente(nome, cpf, telefone, endereco, numero,
-                                                                bairro, cidade, uf, cep, email);
+                // Validar se nome, cpf e telefone estão preenchidos
+                if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(cpf) || string.IsNullOrWhiteSpace(telefone))
+                {
+                    return "Nome, CPF e telefone são campos obrigatórios.";
+                }
 
-                // Adicione lógica para adicionar o cliente ao banco de dados
+                Models.Cliente novoCliente = new Models.Cliente(nome, cpf, telefone, endereco,
+                                                                numero, bairro, cidade, estado, cep, email);
+
+                // Adiciona o novo cliente ao contexto
                 dataContext.AdicionarCliente(novoCliente);
 
-                // Exibe a MessageBox de sucesso
-                MessageBox.Show($"Cliente {nome} foi adicionado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Tenta salvar as alterações no banco de dados
+                dataContext.SaveChanges();
+
+                return $"Cliente {nome} foi adicionado com sucesso.";
+            }
+            catch (DbUpdateException ex)
+            {
+                // Captura exceções específicas do Entity Framework
+                Console.WriteLine($"Erro do Entity Framework ao salvar alterações: {ex.Message}");
+                if (ex.InnerException != null && ex.InnerException.InnerException != null)
+                {
+                    Console.WriteLine($"Detalhes da exceção interna: {ex.InnerException.InnerException.Message}");
+                }
+
+                return $"Erro ao salvar cliente: {ex.Message}";
             }
             catch (Exception ex)
             {
-                // Exibe a MessageBox de erro com informações adicionais da exceção interna
-                MessageBox.Show($"Erro ao salvar cliente: {ex.Message}\n\nDetalhes da exceção interna: {ex.InnerException?.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Captura outras exceções
+                Console.WriteLine($"Erro ao salvar cliente: {ex.Message}");
+                return $"Erro ao salvar cliente: {ex.Message}";
             }
         }
 
         // Método para atualizar um cliente existente
-        public void AtualizarCliente(int idCliente, string nome, string cpf, string telefone, string endereco,
-                                     string numero, string bairro, string cidade, string uf, string cep, string email)
+        public string AtualizarCliente(int idCliente, string nome, string cpf, string telefone, string endereco,
+                                       string numero, string bairro, string cidade, string uf, string cep, string email)
         {
             try
             {
-                // Adicione lógica de validação, se necessário
+                
                 Models.Cliente clienteAtualizado = new Models.Cliente(nome, cpf, telefone, endereco, numero,
                                                                       bairro, cidade, uf, cep, email);
 
-                // Adicione lógica para atualizar o cliente no banco de dados
+                
                 dataContext.AtualizarCliente(idCliente, clienteAtualizado);
+
+                return $"Cliente {nome} foi atualizado com sucesso.";
             }
             catch (Exception ex)
             {
-                // Trate a exceção de acordo com as necessidades do seu aplicativo
+               
                 Console.WriteLine($"Erro ao atualizar cliente: {ex.Message}");
+                return $"Erro ao atualizar cliente: {ex.Message}";
             }
         }
 
         // Método para excluir um cliente
-        public void ExcluirCliente(int idCliente)
+        public string ExcluirCliente(int idCliente)
         {
             try
             {
                 // Adicione lógica para excluir o cliente do banco de dados
                 dataContext.ExcluirCliente(idCliente);
+
+                return "Cliente excluído com sucesso.";
             }
             catch (Exception ex)
             {
-                // Trate a exceção de acordo com as necessidades do seu aplicativo
+                // Logue a exceção ou retorne uma mensagem específica
                 Console.WriteLine($"Erro ao excluir cliente: {ex.Message}");
+                return $"Erro ao excluir cliente: {ex.Message}";
             }
         }
     }
 }
-

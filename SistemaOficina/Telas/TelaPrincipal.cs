@@ -43,13 +43,18 @@ namespace SistemaOficina.Telas
             string numero = txtNumero.Text;
             string bairro = txtBairro.Text;
             string cidade = txtCidade.Text;
-            string uf = txtUf.Text;
+            string estado = txtUf.Text;
             string cep = txtCep.Text;
             string email = txtEmail.Text;
 
-            clienteController.SalvarCliente(nome, cpf, telefone, endereco, numero, bairro, cidade, uf, cep, email);
-            
-           
+            // Chama o método SalvarCliente do ClienteController
+            string resultado = clienteController.SalvarCliente(nome, cpf, telefone, endereco,
+                                                               numero, bairro, cidade, estado, cep, email);
+
+            // Exibe o resultado em uma MessageBox ou de outra forma
+            MessageBox.Show(resultado, "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
         }
     }
 }

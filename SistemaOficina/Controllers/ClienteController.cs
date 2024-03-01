@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaOficina.Data;
+using SistemaOficina.Models;
 using System;
 
 namespace SistemaOficina.Controllers
@@ -93,6 +94,25 @@ namespace SistemaOficina.Controllers
                 // Logue a exceção ou retorne uma mensagem específica
                 Console.WriteLine($"Erro ao excluir cliente: {ex.Message}");
                 return $"Erro ao excluir cliente: {ex.Message}";
+            }
+        }
+
+        public List<Cliente> PesquisarPorCPF(string cpf)
+        {
+            try
+            {
+                // Utiliza LINQ para pesquisar no DbSet com base no CPF
+                var resultados = dataContext.TbClientes
+                    .Where(c => c.Cpf.Contains(cpf))
+                    .ToList();
+
+                return resultados;
+            }
+            catch (Exception ex)
+            {
+                // Trate a exceção de acordo com as necessidades do seu aplicativo
+                Console.WriteLine($"Erro ao pesquisar por CPF: {ex.Message}");
+                return new List<Cliente>();
             }
         }
     }

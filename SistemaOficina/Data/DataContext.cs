@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaOficina.Models;
-using System;
 
 namespace SistemaOficina.Data
 {

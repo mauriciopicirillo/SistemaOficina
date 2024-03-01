@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -66,9 +68,20 @@
             txtIdCliente = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dtgClientes = new DataGridView();
+            Idcli = new DataGridViewTextBoxColumn();
+            Nome = new DataGridViewTextBoxColumn();
+            cpf = new DataGridViewTextBoxColumn();
+            fone = new DataGridViewTextBoxColumn();
+            end = new DataGridViewTextBoxColumn();
+            numero = new DataGridViewTextBoxColumn();
+            bairro = new DataGridViewTextBoxColumn();
+            cidade = new DataGridViewTextBoxColumn();
+            estado = new DataGridViewTextBoxColumn();
+            cep = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
             pictureBox5 = new PictureBox();
-            textBox1 = new TextBox();
+            txtPesquisa = new TextBox();
             tabOrcamentos = new TabPage();
             label37 = new Label();
             textBox28 = new TextBox();
@@ -158,7 +171,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             tabControl1.SuspendLayout();
             tabClientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             tabOrcamentos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -296,9 +309,9 @@
             tabClientes.Controls.Add(txtIdCliente);
             tabClientes.Controls.Add(label2);
             tabClientes.Controls.Add(label1);
-            tabClientes.Controls.Add(dataGridView1);
+            tabClientes.Controls.Add(dtgClientes);
             tabClientes.Controls.Add(pictureBox5);
-            tabClientes.Controls.Add(textBox1);
+            tabClientes.Controls.Add(txtPesquisa);
             tabClientes.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tabClientes.Location = new Point(4, 29);
             tabClientes.Name = "tabClientes";
@@ -579,15 +592,127 @@
             label1.TabIndex = 3;
             label1.Text = "* Campos Obrigatórios";
             // 
-            // dataGridView1
+            // dtgClientes
             // 
-            dataGridView1.BackgroundColor = SystemColors.Window;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(19, 63);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1308, 302);
-            dataGridView1.TabIndex = 2;
+            dtgClientes.BackgroundColor = SystemColors.Window;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtgClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dtgClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgClientes.Columns.AddRange(new DataGridViewColumn[] { Idcli, Nome, cpf, fone, end, numero, bairro, cidade, estado, cep, email });
+            dtgClientes.Location = new Point(19, 63);
+            dtgClientes.Name = "dtgClientes";
+            dtgClientes.RowHeadersWidth = 51;
+            dtgClientes.Size = new Size(1308, 302);
+            dtgClientes.TabIndex = 2;
+            dtgClientes.SelectionChanged += dtgClientes_SelectionChanged;
+            // 
+            // Idcli
+            // 
+            Idcli.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Idcli.DataPropertyName = "Idcli";
+            Idcli.HeaderText = "ID";
+            Idcli.MinimumWidth = 6;
+            Idcli.Name = "Idcli";
+            Idcli.ReadOnly = true;
+            Idcli.Width = 56;
+            // 
+            // Nome
+            // 
+            Nome.DataPropertyName = "Nome";
+            Nome.HeaderText = "Nome";
+            Nome.MinimumWidth = 6;
+            Nome.Name = "Nome";
+            Nome.ReadOnly = true;
+            Nome.Width = 125;
+            // 
+            // cpf
+            // 
+            cpf.DataPropertyName = "Cpf";
+            cpf.HeaderText = "CPF";
+            cpf.MinimumWidth = 6;
+            cpf.Name = "cpf";
+            cpf.ReadOnly = true;
+            cpf.Width = 125;
+            // 
+            // fone
+            // 
+            fone.DataPropertyName = "Fone";
+            fone.HeaderText = "Telefone";
+            fone.MinimumWidth = 6;
+            fone.Name = "fone";
+            fone.ReadOnly = true;
+            fone.Width = 125;
+            // 
+            // end
+            // 
+            end.DataPropertyName = "End";
+            end.HeaderText = "Endereço";
+            end.MinimumWidth = 6;
+            end.Name = "end";
+            end.ReadOnly = true;
+            end.Width = 125;
+            // 
+            // numero
+            // 
+            numero.DataPropertyName = "Numero";
+            numero.HeaderText = "Nº";
+            numero.MinimumWidth = 6;
+            numero.Name = "numero";
+            numero.ReadOnly = true;
+            numero.Width = 125;
+            // 
+            // bairro
+            // 
+            bairro.DataPropertyName = "Bairro";
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bairro.DefaultCellStyle = dataGridViewCellStyle2;
+            bairro.HeaderText = "Bairro";
+            bairro.MinimumWidth = 6;
+            bairro.Name = "bairro";
+            bairro.ReadOnly = true;
+            bairro.Width = 125;
+            // 
+            // cidade
+            // 
+            cidade.DataPropertyName = "Cidade";
+            cidade.HeaderText = "Cidade";
+            cidade.MinimumWidth = 6;
+            cidade.Name = "cidade";
+            cidade.ReadOnly = true;
+            cidade.Width = 125;
+            // 
+            // estado
+            // 
+            estado.DataPropertyName = "Estado";
+            estado.HeaderText = "UF";
+            estado.MinimumWidth = 6;
+            estado.Name = "estado";
+            estado.ReadOnly = true;
+            estado.Width = 125;
+            // 
+            // cep
+            // 
+            cep.DataPropertyName = "Cep";
+            cep.HeaderText = "CEP";
+            cep.MinimumWidth = 6;
+            cep.Name = "cep";
+            cep.ReadOnly = true;
+            cep.Width = 125;
+            // 
+            // email
+            // 
+            email.DataPropertyName = "Email";
+            email.HeaderText = "E-mail";
+            email.MinimumWidth = 6;
+            email.Name = "email";
+            email.ReadOnly = true;
+            email.Width = 125;
             // 
             // pictureBox5
             // 
@@ -599,14 +724,15 @@
             pictureBox5.TabIndex = 1;
             pictureBox5.TabStop = false;
             // 
-            // textBox1
+            // txtPesquisa
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(19, 21);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(370, 27);
-            textBox1.TabIndex = 0;
+            txtPesquisa.BorderStyle = BorderStyle.None;
+            txtPesquisa.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPesquisa.Location = new Point(19, 21);
+            txtPesquisa.Name = "txtPesquisa";
+            txtPesquisa.Size = new Size(370, 27);
+            txtPesquisa.TabIndex = 0;
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
             // tabOrcamentos
             // 
@@ -1521,7 +1647,7 @@
             tabControl1.ResumeLayout(false);
             tabClientes.ResumeLayout(false);
             tabClientes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgClientes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             tabOrcamentos.ResumeLayout(false);
             tabOrcamentos.PerformLayout();
@@ -1560,8 +1686,8 @@
         private TabPage tabPesquisa;
         private TabPage tabSobre;
         private PictureBox pictureBox5;
-        private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private TextBox txtPesquisa;
+        private DataGridView dtgClientes;
         private TextBox txtIdCliente;
         private Label label2;
         private Label label1;
@@ -1671,5 +1797,16 @@
         private Label label52;
         private Label label51;
         private Label label50;
+        private DataGridViewTextBoxColumn Idcli;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn cpf;
+        private DataGridViewTextBoxColumn fone;
+        private DataGridViewTextBoxColumn end;
+        private DataGridViewTextBoxColumn numero;
+        private DataGridViewTextBoxColumn bairro;
+        private DataGridViewTextBoxColumn cidade;
+        private DataGridViewTextBoxColumn estado;
+        private DataGridViewTextBoxColumn cep;
+        private DataGridViewTextBoxColumn email;
     }
 }

@@ -6,18 +6,18 @@
         { 
         }
 
-        public User(int iduser, string usuario, string login, string senha, string perfil)
+        public User(int iduser, string nome, string usuario, string senha, string perfil)
         {
             IdUser = iduser;
+            Nome = nome;
             Usuario = usuario;
-            Login = login;
             Senha = senha;
             Perfil = perfil;
         }
 
         public int IdUser { get; set; }
+        public string Nome { get; private set; }
         public string Usuario { get; set; }
-        public string Login { get; set; }
         public string Senha { get; set; }
         public string Perfil { get; set; }
     }

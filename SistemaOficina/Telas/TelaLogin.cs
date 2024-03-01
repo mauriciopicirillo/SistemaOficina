@@ -13,12 +13,12 @@ namespace SistemaOficina
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string login = txtUsuario.Text;
+            string usuario = txtUsuario.Text;
             string senha = txtSenha.Text;
 
-            UserController usersController = new UserController(new DataContext()); // Substitua pelo seu DataContext real
+            UserController usersController = new UserController(new DataContext()); 
 
-            if (usersController.VerificarLoginSenha(login, senha))
+            if (usersController.VerificarLoginSenha(usuario, senha))
             {
                 // Login bem-sucedido, faça o que for necessário
                 MessageBox.Show("Login bem-sucedido!");
@@ -26,16 +26,13 @@ namespace SistemaOficina
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.Show();
 
-                
-
                 this.Hide();
                 
-
             }
             else
             {
-                // Login falhou, você pode exibir uma mensagem de erro
-                MessageBox.Show("Login falhou. Verifique seu nome de usuário e senha.");
+                // Login falhou, exibir uma mensagem de erro
+                MessageBox.Show("Nome de usuário ou senha incorretos.", "Erro");
             }
 
         }

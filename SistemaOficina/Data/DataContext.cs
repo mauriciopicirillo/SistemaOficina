@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaOficina.Models;
+using System;
 
 namespace SistemaOficina.Data
 {
     public class DataContext : DbContext
     {
         // Configurar a string de conexão para o MySQL
-        private const string ConnectionString = "Server=localhost;Port=3306;Database=dboficina;User=root;Password=admin;";
+        private const string ConnectionString = "Server=localhost;Port=3306;Database=dboficina;User=root;Password=;";
 
         // Mapear a entidade Users para a tabela Users no esquema dboficina
         public DbSet<User> TbUsuarios { get; set; }
@@ -29,45 +30,144 @@ namespace SistemaOficina.Data
             modelBuilder.Entity<Cliente>().HasKey(c => c.Idcli);
         }
 
-        internal void AdicionarCliente(Cliente novoCliente)
+        public void AdicionarCliente(Cliente novoCliente)
         {
-            // Adicionar um novo cliente ao contexto e salvar as alterações no banco de dados
-            TbClientes.Add(novoCliente);
-            SaveChanges();
-        }
-
-        internal void AtualizarCliente(int idCliente, Cliente clienteAtualizado)
-        {
-            // Encontrar o cliente existente no contexto
-            var clienteExistente = TbClientes.Find(idCliente);
-
-            if (clienteExistente != null)
+            try
             {
-                // Atualizar as propriedades do cliente existente com as do cliente atualizado
-                Entry(clienteExistente).CurrentValues.SetValues(clienteAtualizado);
+                // Adicionar um novo cliente ao contexto e salvar as alterações no banco de dados
+                TbClientes.Add(novoCliente);
                 SaveChanges();
             }
-            else
+            catch (Exception ex)
             {
-                // Cliente não encontrado, pode lançar uma exceção ou lidar de acordo com os requisitos
+                // Lidar com a exceção e exibir uma mensagem para o usuário
+                MessageBox.Show($"Erro ao adicionar cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        internal void ExcluirCliente(int idCliente)
+        public void AtualizarCliente(int idCliente, Cliente clienteAtualizado)
         {
-            // Encontrar o cliente existente no contexto
-            var clienteExistente = TbClientes.Find(idCliente);
-
-            if (clienteExistente != null)
+            try
             {
-                // Remover o cliente do contexto e salvar as alterações no banco de dados
-                TbClientes.Remove(clienteExistente);
+                // Encontrar o cliente existente no contexto
+                var clienteExistente = TbClientes.Find(idCliente);
+
+                if (clienteExistente != null)
+                {
+                    // Atualizar as propriedades do cliente existente com as do cliente atualizado
+                    Entry(clienteExistente).CurrentValues.SetValues(clienteAtualizado);
+                    SaveChanges();
+                }
+                else
+                {
+                    // Cliente não encontrado, exibir uma mensagem para o usuário
+                    MessageBox.Show("Cliente não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Lidar com a exceção e exibir uma mensagem para o usuário
+                MessageBox.Show($"Erro ao atualizar cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void ExcluirCliente(int idCliente)
+        {
+            try
+            {
+                // Encontrar o cliente existente no contexto
+                var clienteExistente = TbClientes.Find(idCliente);
+
+                if (clienteExistente != null)
+                {
+                    // Remover o cliente do contexto e salvar as alterações no banco de dados
+                    TbClientes.Remove(clienteExistente);
+                    SaveChanges();
+                }
+                else
+                {
+                    // Cliente não encontrado, exibir uma mensagem para o usuário
+                    MessageBox.Show("Cliente não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Lidar com a exceção e exibir uma mensagem para o usuário
+                MessageBox.Show($"Erro ao excluir cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    
+
+public void AdicionarUsuario(User novoUsuario)
+        {
+            try
+            {
+                // Adicionar um novo usuário ao contexto e salvar as alterações no banco de dados
+                TbUsuarios.Add(novoUsuario);
                 SaveChanges();
             }
-            else
+            catch (Exception ex)
             {
-                // Cliente não encontrado, pode lançar uma exceção ou lidar de acordo com os requisitos
+                // Lidar com a exceção e exibir uma mensagem para o usuário
+                MessageBox.Show($"Erro ao adicionar usuário: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void AtualizarUsuario(int idUsuario, User usuarioAtualizado)
+        {
+            try
+            {
+                // Encontrar o usuário existente no contexto
+                var usuarioExistente = TbUsuarios.Find(idUsuario);
+
+                if (usuarioExistente != null)
+                {
+                    // Atualizar as propriedades do usuário existente com as do usuário atualizado
+                    Entry(usuarioExistente).CurrentValues.SetValues(usuarioAtualizado);
+                    SaveChanges();
+                }
+                else
+                {
+                    // Usuário não encontrado, exibir uma mensagem para o usuário
+                    MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Lidar com a exceção e exibir uma mensagem para o usuário
+                MessageBox.Show($"Erro ao atualizar usuário: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void ExcluirUsuario(int idUsuario)
+        {
+            try
+            {
+                // Encontrar o usuário existente no contexto
+                var usuarioExistente = TbUsuarios.Find(idUsuario);
+
+                if (usuarioExistente != null)
+                {
+                    // Remover o usuário do contexto e salvar as alterações no banco de dados
+                    TbUsuarios.Remove(usuarioExistente);
+                    SaveChanges();
+                }
+                else
+                {
+                    // Usuário não encontrado, exibir uma mensagem para o usuário
+                    MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Lidar com a exceção e exibir uma mensagem para o usuário
+                MessageBox.Show($"Erro ao excluir usuário: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
+
+
 }
+    
+
+

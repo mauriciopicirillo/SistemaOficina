@@ -1,5 +1,7 @@
 ﻿using SistemaOficina.Data;
+using System;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace SistemaOficina.Controllers
 {
@@ -17,16 +19,25 @@ namespace SistemaOficina.Controllers
         {
             try
             {
-                // Consulta o banco de dados para encontrar um usuário com o login e senha correspondentes
-                var login = dbContext.TbUsuarios.FirstOrDefault(u => u.Usuario == usuario && u.Senha == senha);
+                // Consulta o banco de dados para encontrar um usuário com o login correspondente
+                var user = dbContext.TbUsuarios.FirstOrDefault(u => u.Usuario == usuario);
 
-                // Se encontrar o usuário, retorna verdadeiro. Caso contrário, retorna falso.
-                return login != null;
+                // Verifica se o usuário foi encontrado e se a senha corresponde
+                if (user != null && user.Senha == senha)
+                {
+                    // Se encontrar o usuário e a senha corresponder, retorna verdadeiro
+                    return true;
+                }
+                else
+                {
+                    // Se o usuário não for encontrado ou a senha não corresponder, retorna falso
+                    return false;
+                }
             }
             catch (Exception ex)
             {
                 // Lide com exceções, log, ou retorne falso em caso de erro
-                Console.WriteLine($"Erro ao verificar login e senha: {ex.Message}");
+                MessageBox.Show($"Erro ao verificar login e senha: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

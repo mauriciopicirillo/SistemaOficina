@@ -355,6 +355,7 @@
             btnDel.Size = new Size(63, 65);
             btnDel.TabIndex = 28;
             btnDel.UseVisualStyleBackColor = true;
+            btnDel.Click += btnDel_Click;
             // 
             // btnEdit
             // 

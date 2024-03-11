@@ -44,9 +44,6 @@ namespace SistemaOficina.Data
             }
         }
 
-        
-
-
         public void ExcluirCliente(int idCliente)
         {
             try
@@ -56,9 +53,35 @@ namespace SistemaOficina.Data
 
                 if (clienteExistente != null)
                 {
-                    // Remover o cliente do contexto e salvar as alterações no banco de dados
-                    TbClientes.Remove(clienteExistente);
-                    SaveChanges();
+                    // Solicitar confirmação do usuário antes de excluir
+                    var confirmacao = MessageBox.Show("Tem certeza de que deseja excluir este cliente?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (confirmacao == DialogResult.Yes)
+                    {
+                        // Iniciar transação (opcional, dependendo do contexto do banco de dados)
+                        using (var transaction = Database.BeginTransaction())
+                        {
+                            try
+                            {
+                                // Remover o cliente do contexto e salvar as alterações no banco de dados
+                                TbClientes.Remove(clienteExistente);
+                                SaveChanges();
+
+                                // Commit da transação (opcional, dependendo do contexto do banco de dados)
+                                transaction.Commit();
+
+                                MessageBox.Show("Cliente excluído com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                // Rollback da transação em caso de falha (opcional, dependendo do contexto do banco de dados)
+                                transaction.Rollback();
+
+                                // Lidar com a exceção e exibir uma mensagem para o usuário
+                                MessageBox.Show($"Erro ao excluir cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -68,13 +91,13 @@ namespace SistemaOficina.Data
             }
             catch (Exception ex)
             {
-                // Lidar com a exceção e exibir uma mensagem para o usuário
-                MessageBox.Show($"Erro ao excluir cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Lidar com a exceção global e exibir uma mensagem para o usuário
+                MessageBox.Show($"Erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    
 
-public void AdicionarUsuario(User novoUsuario)
+
+        public void AdicionarUsuario(User novoUsuario)
         {
             try
             {

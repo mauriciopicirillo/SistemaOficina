@@ -62,7 +62,7 @@ namespace SistemaOficina.Telas
         // Método para limpar os campos
         private void LimparCampos()
         {
-            
+
             txtNome.Text = "";
             txtCpf.Text = "";
             txtTelefone.Text = "";
@@ -177,6 +177,33 @@ namespace SistemaOficina.Telas
             }
             // Não é necessário mais a verificação da variável confirmacaoExibida
         }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Verifica se há um cliente selecionado
+                if (clienteIdSelecionado != -1)
+                {
+                    // Chama o método ExcluirCliente usando a instância existente na TelaPrincipal
+                    clienteController.ExcluirCliente(clienteIdSelecionado);
+
+                    // Atualiza o dataGridView após a exclusão
+                    AtualizarDataGridViewPorCPF(txtPesquisa.Text);
+
+                    // Limpa os campos após a exclusão
+                    LimparCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um cliente para excluir.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Lidar com exceções, se necessário
+                MessageBox.Show($"Erro ao excluir cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
-    
 }

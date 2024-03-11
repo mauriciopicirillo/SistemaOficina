@@ -44,31 +44,8 @@ namespace SistemaOficina.Data
             }
         }
 
-        public void AtualizarCliente(int idCliente, Cliente clienteAtualizado)
-        {
-            try
-            {
-                // Encontrar o cliente existente no contexto
-                var clienteExistente = TbClientes.Find(idCliente);
+        
 
-                if (clienteExistente != null)
-                {
-                    // Atualizar as propriedades do cliente existente com as do cliente atualizado
-                    Entry(clienteExistente).CurrentValues.SetValues(clienteAtualizado);
-                    SaveChanges();
-                }
-                else
-                {
-                    // Cliente não encontrado, exibir uma mensagem para o usuário
-                    MessageBox.Show("Cliente não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                // Lidar com a exceção e exibir uma mensagem para o usuário
-                MessageBox.Show($"Erro ao atualizar cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         public void ExcluirCliente(int idCliente)
         {

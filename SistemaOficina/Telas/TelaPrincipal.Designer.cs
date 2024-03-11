@@ -65,8 +65,6 @@
             txtCpf = new TextBox();
             txtNome = new TextBox();
             label3 = new Label();
-            txtIdCliente = new TextBox();
-            label2 = new Label();
             label1 = new Label();
             dtgClientes = new DataGridView();
             Idcli = new DataGridViewTextBoxColumn();
@@ -306,8 +304,6 @@
             tabClientes.Controls.Add(txtCpf);
             tabClientes.Controls.Add(txtNome);
             tabClientes.Controls.Add(label3);
-            tabClientes.Controls.Add(txtIdCliente);
-            tabClientes.Controls.Add(label2);
             tabClientes.Controls.Add(label1);
             tabClientes.Controls.Add(dtgClientes);
             tabClientes.Controls.Add(pictureBox5);
@@ -369,6 +365,7 @@
             btnEdit.Size = new Size(63, 65);
             btnEdit.TabIndex = 27;
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnSave
             // 
@@ -563,25 +560,6 @@
             label3.TabIndex = 6;
             label3.Text = "* Nome";
             // 
-            // txtIdCliente
-            // 
-            txtIdCliente.BorderStyle = BorderStyle.None;
-            txtIdCliente.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtIdCliente.Location = new Point(119, 386);
-            txtIdCliente.Name = "txtIdCliente";
-            txtIdCliente.Size = new Size(157, 27);
-            txtIdCliente.TabIndex = 5;
-            txtIdCliente.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(18, 390);
-            label2.Name = "label2";
-            label2.Size = new Size(83, 23);
-            label2.TabIndex = 4;
-            label2.Text = "Id Cliente";
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -633,7 +611,7 @@
             // 
             // cpf
             // 
-            cpf.DataPropertyName = "Cpf";
+            cpf.DataPropertyName = "cpf";
             cpf.HeaderText = "CPF";
             cpf.MinimumWidth = 6;
             cpf.Name = "cpf";
@@ -670,7 +648,7 @@
             // bairro
             // 
             bairro.DataPropertyName = "Bairro";
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.Font = new Font("Segoe MDL2 Assets", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bairro.DefaultCellStyle = dataGridViewCellStyle2;
             bairro.HeaderText = "Bairro";
             bairro.MinimumWidth = 6;
@@ -1639,7 +1617,9 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Name = "TelaPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaPrincipal";
+            FormClosing += TelaPrincipal_FormClosing;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -1688,7 +1668,6 @@
         private PictureBox pictureBox5;
         private TextBox txtPesquisa;
         private DataGridView dtgClientes;
-        private TextBox txtIdCliente;
         private Label label2;
         private Label label1;
         private TextBox txtUf;

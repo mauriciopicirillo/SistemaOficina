@@ -16,25 +16,22 @@ namespace SistemaOficina
             string usuario = txtUsuario.Text;
             string senha = txtSenha.Text;
 
-            UserController usersController = new UserController(new DataContext()); 
+            UserController usersController = new UserController(new DataContext());
 
             if (usersController.VerificarLoginSenha(usuario, senha))
             {
-                // Login bem-sucedido, faça o que for necessário
-                MessageBox.Show("Login bem-sucedido!");
+                
 
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.Show();
 
-                this.Hide();
-                
+                this.Hide(); // Fecha apenas a TelaLogin
             }
             else
             {
                 // Login falhou, exibir uma mensagem de erro
                 MessageBox.Show("Nome de usuário ou senha incorretos.", "Erro");
             }
-
         }
     }
 }

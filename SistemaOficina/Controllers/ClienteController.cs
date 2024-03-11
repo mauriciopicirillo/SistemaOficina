@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaOficina.Data;
 using SistemaOficina.Models;
-using System;
 
 namespace SistemaOficina.Controllers
 {
-    internal class ClienteController
+    public class ClienteController
     {
         private readonly DataContext dataContext;
 
@@ -56,26 +55,43 @@ namespace SistemaOficina.Controllers
             }
         }
 
-        // Método para atualizar um cliente existente
-        public string AtualizarCliente(int idCliente, string nome, string cpf, string telefone, string endereco,
-                                       string numero, string bairro, string cidade, string uf, string cep, string email)
+        public void AtualizarCliente(int idCliente, string nome, string cpf, string telefone, string endereco,
+                             string numero, string bairro, string cidade, string estado, string cep, string email)
         {
             try
             {
-                
-                Models.Cliente clienteAtualizado = new Models.Cliente(nome, cpf, telefone, endereco, numero,
-                                                                      bairro, cidade, uf, cep, email);
+                // Encontrar o cliente existente no contexto
+                var clienteExistente = dataContext.TbClientes.Find(idCliente);
 
-                
-                dataContext.AtualizarCliente(idCliente, clienteAtualizado);
+                if (clienteExistente != null)
+                {
+                    // Atualizar as propriedades do cliente existente com os novos valores
+                    clienteExistente.Nome = nome;
+                    clienteExistente.Cpf = cpf;
+                    clienteExistente.Fone = telefone;
+                    clienteExistente.End = endereco;
+                    clienteExistente.Numero = numero;
+                    clienteExistente.Bairro = bairro;
+                    clienteExistente.Cidade = cidade;
+                    clienteExistente.Estado = estado;
+                    clienteExistente.Cep = cep;
+                    clienteExistente.Email = email;
 
-                return $"Cliente {nome} foi atualizado com sucesso.";
+                    // Salvar as alterações no banco de dados
+                    dataContext.SaveChanges();
+
+                    MessageBox.Show("Cliente atualizado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // Cliente não encontrado, exibir uma mensagem para o usuário
+                    MessageBox.Show("Cliente não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
-               
-                Console.WriteLine($"Erro ao atualizar cliente: {ex.Message}");
-                return $"Erro ao atualizar cliente: {ex.Message}";
+                // Lidar com a exceção e exibir uma mensagem para o usuário
+                MessageBox.Show($"Erro ao atualizar cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

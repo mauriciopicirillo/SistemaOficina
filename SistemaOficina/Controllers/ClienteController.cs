@@ -13,6 +13,10 @@ namespace SistemaOficina.Controllers
             this.dataContext = dataContext;
         }
 
+        public ClienteController()
+        {
+        }
+
         // Método para salvar um novo cliente
         public string SalvarCliente(string nome, string cpf, string telefone, string endereco,
                                     string numero, string bairro, string cidade, string estado, string cep, string email)
@@ -128,6 +132,31 @@ namespace SistemaOficina.Controllers
             {
                 // Trate a exceção de acordo com as necessidades do seu aplicativo
                 Console.WriteLine($"Erro ao pesquisar por CPF: {ex.Message}");
+                return new List<Cliente>();
+            }
+        }
+
+        public List<Cliente> PesquisarPorCPFOrçamentos(string cpf)
+        {
+            try
+            {
+                // Utilize LINQ para pesquisar no DbSet com base no CPF
+                var resultados = dataContext.TbClientes
+                    .Where(c => c.Cpf.Contains(cpf))
+                    .Select(c => new Cliente
+                    {
+                        Idcli = c.Idcli,
+                        Nome = c.Nome,
+                        Fone = c.Fone
+                    })
+                    .ToList();
+
+                return resultados;
+            }
+            catch (Exception ex)
+            {
+                // Trate a exceção de acordo com as necessidades do seu aplicativo
+                Console.WriteLine($"Erro ao pesquisar por CPF (Orçamentos): {ex.Message}");
                 return new List<Cliente>();
             }
         }

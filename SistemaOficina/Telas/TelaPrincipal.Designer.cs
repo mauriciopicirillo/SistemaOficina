@@ -30,6 +30,7 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -81,10 +82,13 @@
             pictureBox5 = new PictureBox();
             txtPesquisa = new TextBox();
             tabOrcamentos = new TabPage();
+            groupBox2 = new GroupBox();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
             label37 = new Label();
-            textBox28 = new TextBox();
+            txtMecanico = new TextBox();
             label36 = new Label();
-            textBox27 = new TextBox();
+            txtObs = new TextBox();
             button11 = new Button();
             label35 = new Label();
             label34 = new Label();
@@ -97,39 +101,44 @@
             button7 = new Button();
             button8 = new Button();
             button9 = new Button();
-            dataGridView3 = new DataGridView();
+            dtgOrcamentos = new DataGridView();
+            ColDesc = new DataGridViewTextBoxColumn();
+            ColQuantidade = new DataGridViewTextBoxColumn();
+            ColValUni = new DataGridViewTextBoxColumn();
+            ColValTot = new DataGridViewTextBoxColumn();
             label29 = new Label();
             label28 = new Label();
-            textBox25 = new TextBox();
-            textBox24 = new TextBox();
+            txtMotor = new TextBox();
+            txtAno = new TextBox();
             label27 = new Label();
             label26 = new Label();
-            textBox23 = new TextBox();
-            textBox22 = new TextBox();
+            txtCor = new TextBox();
+            txtMarca = new TextBox();
             label25 = new Label();
             label24 = new Label();
-            textBox21 = new TextBox();
-            textBox20 = new TextBox();
+            txtDef = new TextBox();
+            txtPlaca = new TextBox();
             label23 = new Label();
-            textBox19 = new TextBox();
-            textBox18 = new TextBox();
+            txtModelo = new TextBox();
+            txtFoneCli = new TextBox();
             label22 = new Label();
             label21 = new Label();
-            textBox17 = new TextBox();
+            txtNomeCli = new TextBox();
             label20 = new Label();
             cboSituacao = new ComboBox();
             label19 = new Label();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
             groupBox1 = new GroupBox();
-            dataGridView2 = new DataGridView();
+            dtgCli = new DataGridView();
+            ColIdCli = new DataGridViewTextBoxColumn();
+            ColNomeCli = new DataGridViewTextBoxColumn();
+            ColFoneCli = new DataGridViewTextBoxColumn();
             label18 = new Label();
-            textBox16 = new TextBox();
+            txtIdCli = new TextBox();
             pictureBox6 = new PictureBox();
-            textBox15 = new TextBox();
-            textBox14 = new TextBox();
+            txtPesCli = new TextBox();
+            txtData = new TextBox();
             label17 = new Label();
-            textBox13 = new TextBox();
+            txtIdos = new TextBox();
             label16 = new Label();
             tabPesquisa = new TabPage();
             label38 = new Label();
@@ -172,9 +181,10 @@
             ((System.ComponentModel.ISupportInitialize)dtgClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             tabOrcamentos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgOrcamentos).BeginInit();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgCli).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             tabPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
@@ -716,10 +726,11 @@
             // tabOrcamentos
             // 
             tabOrcamentos.BackColor = SystemColors.GradientActiveCaption;
+            tabOrcamentos.Controls.Add(groupBox2);
             tabOrcamentos.Controls.Add(label37);
-            tabOrcamentos.Controls.Add(textBox28);
+            tabOrcamentos.Controls.Add(txtMecanico);
             tabOrcamentos.Controls.Add(label36);
-            tabOrcamentos.Controls.Add(textBox27);
+            tabOrcamentos.Controls.Add(txtObs);
             tabOrcamentos.Controls.Add(button11);
             tabOrcamentos.Controls.Add(label35);
             tabOrcamentos.Controls.Add(label34);
@@ -732,34 +743,32 @@
             tabOrcamentos.Controls.Add(button7);
             tabOrcamentos.Controls.Add(button8);
             tabOrcamentos.Controls.Add(button9);
-            tabOrcamentos.Controls.Add(dataGridView3);
+            tabOrcamentos.Controls.Add(dtgOrcamentos);
             tabOrcamentos.Controls.Add(label29);
             tabOrcamentos.Controls.Add(label28);
-            tabOrcamentos.Controls.Add(textBox25);
-            tabOrcamentos.Controls.Add(textBox24);
+            tabOrcamentos.Controls.Add(txtMotor);
+            tabOrcamentos.Controls.Add(txtAno);
             tabOrcamentos.Controls.Add(label27);
             tabOrcamentos.Controls.Add(label26);
-            tabOrcamentos.Controls.Add(textBox23);
-            tabOrcamentos.Controls.Add(textBox22);
+            tabOrcamentos.Controls.Add(txtCor);
+            tabOrcamentos.Controls.Add(txtMarca);
             tabOrcamentos.Controls.Add(label25);
             tabOrcamentos.Controls.Add(label24);
-            tabOrcamentos.Controls.Add(textBox21);
-            tabOrcamentos.Controls.Add(textBox20);
+            tabOrcamentos.Controls.Add(txtDef);
+            tabOrcamentos.Controls.Add(txtPlaca);
             tabOrcamentos.Controls.Add(label23);
-            tabOrcamentos.Controls.Add(textBox19);
-            tabOrcamentos.Controls.Add(textBox18);
+            tabOrcamentos.Controls.Add(txtModelo);
+            tabOrcamentos.Controls.Add(txtFoneCli);
             tabOrcamentos.Controls.Add(label22);
             tabOrcamentos.Controls.Add(label21);
-            tabOrcamentos.Controls.Add(textBox17);
+            tabOrcamentos.Controls.Add(txtNomeCli);
             tabOrcamentos.Controls.Add(label20);
             tabOrcamentos.Controls.Add(cboSituacao);
             tabOrcamentos.Controls.Add(label19);
-            tabOrcamentos.Controls.Add(radioButton2);
-            tabOrcamentos.Controls.Add(radioButton1);
             tabOrcamentos.Controls.Add(groupBox1);
-            tabOrcamentos.Controls.Add(textBox14);
+            tabOrcamentos.Controls.Add(txtData);
             tabOrcamentos.Controls.Add(label17);
-            tabOrcamentos.Controls.Add(textBox13);
+            tabOrcamentos.Controls.Add(txtIdos);
             tabOrcamentos.Controls.Add(label16);
             tabOrcamentos.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tabOrcamentos.Location = new Point(4, 29);
@@ -770,6 +779,40 @@
             tabOrcamentos.Text = "Orçamentos";
             tabOrcamentos.Click += tabOrcamentos_Click;
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(radioButton1);
+            groupBox2.Controls.Add(radioButton2);
+            groupBox2.Location = new Point(57, 75);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(433, 49);
+            groupBox2.TabIndex = 9;
+            groupBox2.TabStop = false;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radioButton1.Location = new Point(6, 16);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(117, 27);
+            radioButton1.TabIndex = 10;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Orçamento";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radioButton2.Location = new Point(260, 16);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(167, 27);
+            radioButton2.TabIndex = 11;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Ordem de Serviço";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
             // label37
             // 
             label37.AutoSize = true;
@@ -779,14 +822,14 @@
             label37.TabIndex = 49;
             label37.Text = "Mecânico";
             // 
-            // textBox28
+            // txtMecanico
             // 
-            textBox28.BorderStyle = BorderStyle.None;
-            textBox28.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox28.Location = new Point(125, 634);
-            textBox28.Name = "textBox28";
-            textBox28.Size = new Size(302, 27);
-            textBox28.TabIndex = 48;
+            txtMecanico.BorderStyle = BorderStyle.None;
+            txtMecanico.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtMecanico.Location = new Point(125, 634);
+            txtMecanico.Name = "txtMecanico";
+            txtMecanico.Size = new Size(302, 27);
+            txtMecanico.TabIndex = 48;
             // 
             // label36
             // 
@@ -797,14 +840,14 @@
             label36.TabIndex = 47;
             label36.Text = "Observação";
             // 
-            // textBox27
+            // txtObs
             // 
-            textBox27.BorderStyle = BorderStyle.None;
-            textBox27.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox27.Location = new Point(125, 672);
-            textBox27.Name = "textBox27";
-            textBox27.Size = new Size(820, 27);
-            textBox27.TabIndex = 46;
+            txtObs.BorderStyle = BorderStyle.None;
+            txtObs.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtObs.Location = new Point(125, 672);
+            txtObs.Name = "txtObs";
+            txtObs.Size = new Size(820, 27);
+            txtObs.TabIndex = 46;
             // 
             // button11
             // 
@@ -928,15 +971,52 @@
             button9.TabIndex = 34;
             button9.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dtgOrcamentos
             // 
-            dataGridView3.BackgroundColor = SystemColors.Window;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(20, 338);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.Size = new Size(1307, 247);
-            dataGridView3.TabIndex = 33;
+            dtgOrcamentos.BackgroundColor = SystemColors.Window;
+            dtgOrcamentos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgOrcamentos.Columns.AddRange(new DataGridViewColumn[] { ColDesc, ColQuantidade, ColValUni, ColValTot });
+            dtgOrcamentos.Location = new Point(20, 338);
+            dtgOrcamentos.Name = "dtgOrcamentos";
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dtgOrcamentos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dtgOrcamentos.RowHeadersWidth = 51;
+            dtgOrcamentos.Size = new Size(1307, 247);
+            dtgOrcamentos.TabIndex = 33;
+            // 
+            // ColDesc
+            // 
+            ColDesc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColDesc.HeaderText = "Descrição";
+            ColDesc.MinimumWidth = 6;
+            ColDesc.Name = "ColDesc";
+            // 
+            // ColQuantidade
+            // 
+            ColQuantidade.HeaderText = "Quantidade";
+            ColQuantidade.MinimumWidth = 6;
+            ColQuantidade.Name = "ColQuantidade";
+            ColQuantidade.Width = 125;
+            // 
+            // ColValUni
+            // 
+            ColValUni.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            ColValUni.HeaderText = "Valor Unitário";
+            ColValUni.MinimumWidth = 6;
+            ColValUni.Name = "ColValUni";
+            ColValUni.Width = 144;
+            // 
+            // ColValTot
+            // 
+            ColValTot.HeaderText = "Valor Total";
+            ColValTot.MinimumWidth = 6;
+            ColValTot.Name = "ColValTot";
+            ColValTot.Width = 125;
             // 
             // label29
             // 
@@ -956,23 +1036,23 @@
             label28.TabIndex = 31;
             label28.Text = "Motor";
             // 
-            // textBox25
+            // txtMotor
             // 
-            textBox25.BorderStyle = BorderStyle.None;
-            textBox25.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox25.Location = new Point(854, 256);
-            textBox25.Name = "textBox25";
-            textBox25.Size = new Size(205, 27);
-            textBox25.TabIndex = 30;
+            txtMotor.BorderStyle = BorderStyle.None;
+            txtMotor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtMotor.Location = new Point(854, 256);
+            txtMotor.Name = "txtMotor";
+            txtMotor.Size = new Size(205, 27);
+            txtMotor.TabIndex = 30;
             // 
-            // textBox24
+            // txtAno
             // 
-            textBox24.BorderStyle = BorderStyle.None;
-            textBox24.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox24.Location = new Point(661, 256);
-            textBox24.Name = "textBox24";
-            textBox24.Size = new Size(127, 27);
-            textBox24.TabIndex = 29;
+            txtAno.BorderStyle = BorderStyle.None;
+            txtAno.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAno.Location = new Point(661, 256);
+            txtAno.Name = "txtAno";
+            txtAno.Size = new Size(127, 27);
+            txtAno.TabIndex = 29;
             // 
             // label27
             // 
@@ -992,23 +1072,23 @@
             label26.TabIndex = 27;
             label26.Text = "Marca";
             // 
-            // textBox23
+            // txtCor
             // 
-            textBox23.BorderStyle = BorderStyle.None;
-            textBox23.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox23.Location = new Point(1108, 257);
-            textBox23.Name = "textBox23";
-            textBox23.Size = new Size(218, 27);
-            textBox23.TabIndex = 26;
+            txtCor.BorderStyle = BorderStyle.None;
+            txtCor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCor.Location = new Point(1108, 257);
+            txtCor.Name = "txtCor";
+            txtCor.Size = new Size(218, 27);
+            txtCor.TabIndex = 26;
             // 
-            // textBox22
+            // txtMarca
             // 
-            textBox22.BorderStyle = BorderStyle.None;
-            textBox22.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox22.Location = new Point(390, 257);
-            textBox22.Name = "textBox22";
-            textBox22.Size = new Size(218, 27);
-            textBox22.TabIndex = 25;
+            txtMarca.BorderStyle = BorderStyle.None;
+            txtMarca.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtMarca.Location = new Point(390, 257);
+            txtMarca.Name = "txtMarca";
+            txtMarca.Size = new Size(218, 27);
+            txtMarca.TabIndex = 25;
             // 
             // label25
             // 
@@ -1028,23 +1108,23 @@
             label24.TabIndex = 23;
             label24.Text = "Placa";
             // 
-            // textBox21
+            // txtDef
             // 
-            textBox21.BorderStyle = BorderStyle.None;
-            textBox21.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox21.Location = new Point(103, 295);
-            textBox21.Name = "textBox21";
-            textBox21.Size = new Size(1224, 27);
-            textBox21.TabIndex = 22;
+            txtDef.BorderStyle = BorderStyle.None;
+            txtDef.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDef.Location = new Point(103, 295);
+            txtDef.Name = "txtDef";
+            txtDef.Size = new Size(1224, 27);
+            txtDef.TabIndex = 22;
             // 
-            // textBox20
+            // txtPlaca
             // 
-            textBox20.BorderStyle = BorderStyle.None;
-            textBox20.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox20.Location = new Point(103, 256);
-            textBox20.Name = "textBox20";
-            textBox20.Size = new Size(218, 27);
-            textBox20.TabIndex = 21;
+            txtPlaca.BorderStyle = BorderStyle.None;
+            txtPlaca.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPlaca.Location = new Point(103, 256);
+            txtPlaca.Name = "txtPlaca";
+            txtPlaca.Size = new Size(218, 27);
+            txtPlaca.TabIndex = 21;
             // 
             // label23
             // 
@@ -1055,23 +1135,23 @@
             label23.TabIndex = 20;
             label23.Text = "Modelo";
             // 
-            // textBox19
+            // txtModelo
             // 
-            textBox19.BorderStyle = BorderStyle.None;
-            textBox19.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox19.Location = new Point(1092, 221);
-            textBox19.Name = "textBox19";
-            textBox19.Size = new Size(234, 27);
-            textBox19.TabIndex = 19;
+            txtModelo.BorderStyle = BorderStyle.None;
+            txtModelo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtModelo.Location = new Point(1092, 221);
+            txtModelo.Name = "txtModelo";
+            txtModelo.Size = new Size(234, 27);
+            txtModelo.TabIndex = 19;
             // 
-            // textBox18
+            // txtFoneCli
             // 
-            textBox18.BorderStyle = BorderStyle.None;
-            textBox18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox18.Location = new Point(794, 220);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(218, 27);
-            textBox18.TabIndex = 18;
+            txtFoneCli.BorderStyle = BorderStyle.None;
+            txtFoneCli.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtFoneCli.Location = new Point(794, 220);
+            txtFoneCli.Name = "txtFoneCli";
+            txtFoneCli.Size = new Size(218, 27);
+            txtFoneCli.TabIndex = 18;
             // 
             // label22
             // 
@@ -1091,14 +1171,14 @@
             label21.TabIndex = 16;
             label21.Text = "Nome";
             // 
-            // textBox17
+            // txtNomeCli
             // 
-            textBox17.BorderStyle = BorderStyle.None;
-            textBox17.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox17.Location = new Point(103, 220);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(606, 27);
-            textBox17.TabIndex = 15;
+            txtNomeCli.BorderStyle = BorderStyle.None;
+            txtNomeCli.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNomeCli.Location = new Point(103, 220);
+            txtNomeCli.Name = "txtNomeCli";
+            txtNomeCli.Size = new Size(606, 27);
+            txtNomeCli.TabIndex = 15;
             // 
             // label20
             // 
@@ -1113,7 +1193,8 @@
             // cboSituacao
             // 
             cboSituacao.FormattingEnabled = true;
-            cboSituacao.Location = new Point(272, 124);
+            cboSituacao.Items.AddRange(new object[] { "Aguardando Aprovação", "Aguardando Peças", "Na Oficina", "Orçamento REPROVADO", "Retornou" });
+            cboSituacao.Location = new Point(272, 137);
             cboSituacao.Name = "cboSituacao";
             cboSituacao.Size = new Size(218, 31);
             cboSituacao.TabIndex = 13;
@@ -1123,43 +1204,19 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.Location = new Point(191, 132);
+            label19.Location = new Point(191, 145);
             label19.Name = "label19";
             label19.Size = new Size(75, 23);
             label19.TabIndex = 12;
             label19.Text = "Situação";
             // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton2.Location = new Point(272, 80);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(167, 27);
-            radioButton2.TabIndex = 11;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Ordem de Serviço";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton1.Location = new Point(57, 80);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(117, 27);
-            radioButton1.TabIndex = 10;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Orçamento";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dataGridView2);
+            groupBox1.Controls.Add(dtgCli);
             groupBox1.Controls.Add(label18);
-            groupBox1.Controls.Add(textBox16);
+            groupBox1.Controls.Add(txtIdCli);
             groupBox1.Controls.Add(pictureBox6);
-            groupBox1.Controls.Add(textBox15);
+            groupBox1.Controls.Add(txtPesCli);
             groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(521, 15);
             groupBox1.Name = "groupBox1";
@@ -1168,16 +1225,41 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
             // 
-            // dataGridView2
+            // dtgCli
             // 
-            dataGridView2.BackgroundColor = SystemColors.Window;
-            dataGridView2.BorderStyle = BorderStyle.None;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(18, 76);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(771, 92);
-            dataGridView2.TabIndex = 13;
+            dtgCli.BackgroundColor = SystemColors.Window;
+            dtgCli.BorderStyle = BorderStyle.None;
+            dtgCli.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgCli.Columns.AddRange(new DataGridViewColumn[] { ColIdCli, ColNomeCli, ColFoneCli });
+            dtgCli.Location = new Point(18, 76);
+            dtgCli.Name = "dtgCli";
+            dtgCli.RowHeadersWidth = 51;
+            dtgCli.Size = new Size(771, 92);
+            dtgCli.TabIndex = 13;
+            dtgCli.SelectionChanged += dtgCli_SelectionChanged;
+            // 
+            // ColIdCli
+            // 
+            ColIdCli.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            ColIdCli.HeaderText = "ID";
+            ColIdCli.MinimumWidth = 6;
+            ColIdCli.Name = "ColIdCli";
+            ColIdCli.Width = 61;
+            // 
+            // ColNomeCli
+            // 
+            ColNomeCli.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColNomeCli.HeaderText = "Nome";
+            ColNomeCli.MinimumWidth = 6;
+            ColNomeCli.Name = "ColNomeCli";
+            // 
+            // ColFoneCli
+            // 
+            ColFoneCli.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            ColFoneCli.HeaderText = "Telefone";
+            ColFoneCli.MinimumWidth = 6;
+            ColFoneCli.Name = "ColFoneCli";
+            ColFoneCli.Width = 119;
             // 
             // label18
             // 
@@ -1189,15 +1271,16 @@
             label18.TabIndex = 12;
             label18.Text = "ID";
             // 
-            // textBox16
+            // txtIdCli
             // 
-            textBox16.BorderStyle = BorderStyle.None;
-            textBox16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox16.Location = new Point(632, 36);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(157, 27);
-            textBox16.TabIndex = 10;
-            textBox16.TextAlign = HorizontalAlignment.Center;
+            txtIdCli.BorderStyle = BorderStyle.None;
+            txtIdCli.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtIdCli.Location = new Point(632, 36);
+            txtIdCli.Name = "txtIdCli";
+            txtIdCli.ReadOnly = true;
+            txtIdCli.Size = new Size(157, 27);
+            txtIdCli.TabIndex = 10;
+            txtIdCli.TextAlign = HorizontalAlignment.Center;
             // 
             // pictureBox6
             // 
@@ -1209,24 +1292,25 @@
             pictureBox6.TabIndex = 11;
             pictureBox6.TabStop = false;
             // 
-            // textBox15
+            // txtPesCli
             // 
-            textBox15.BorderStyle = BorderStyle.None;
-            textBox15.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox15.Location = new Point(18, 34);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(299, 27);
-            textBox15.TabIndex = 10;
+            txtPesCli.BorderStyle = BorderStyle.None;
+            txtPesCli.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPesCli.Location = new Point(17, 34);
+            txtPesCli.Name = "txtPesCli";
+            txtPesCli.Size = new Size(299, 27);
+            txtPesCli.TabIndex = 10;
+            txtPesCli.TextChanged += txtPesCli_TextChanged;
             // 
-            // textBox14
+            // txtData
             // 
-            textBox14.BorderStyle = BorderStyle.None;
-            textBox14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox14.Location = new Point(272, 45);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(218, 27);
-            textBox14.TabIndex = 8;
-            textBox14.TextAlign = HorizontalAlignment.Center;
+            txtData.BorderStyle = BorderStyle.None;
+            txtData.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtData.Location = new Point(272, 45);
+            txtData.Name = "txtData";
+            txtData.Size = new Size(218, 27);
+            txtData.TabIndex = 8;
+            txtData.TextAlign = HorizontalAlignment.Center;
             // 
             // label17
             // 
@@ -1238,15 +1322,16 @@
             label17.TabIndex = 7;
             label17.Text = "Data";
             // 
-            // textBox13
+            // txtIdos
             // 
-            textBox13.BorderStyle = BorderStyle.None;
-            textBox13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox13.Location = new Point(57, 44);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(157, 27);
-            textBox13.TabIndex = 6;
-            textBox13.TextAlign = HorizontalAlignment.Center;
+            txtIdos.BorderStyle = BorderStyle.None;
+            txtIdos.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtIdos.Location = new Point(57, 44);
+            txtIdos.Name = "txtIdos";
+            txtIdos.ReadOnly = true;
+            txtIdos.Size = new Size(157, 27);
+            txtIdos.TabIndex = 6;
+            txtIdos.TextAlign = HorizontalAlignment.Center;
             // 
             // label16
             // 
@@ -1632,10 +1717,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             tabOrcamentos.ResumeLayout(false);
             tabOrcamentos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgOrcamentos).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgCli).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             tabPesquisa.ResumeLayout(false);
             tabPesquisa.PerformLayout();
@@ -1700,37 +1787,37 @@
         private Label label16;
         private GroupBox groupBox1;
         private Label label18;
-        private TextBox textBox16;
+        private TextBox txtIdCli;
         private PictureBox pictureBox6;
-        private TextBox textBox15;
-        private TextBox textBox14;
+        private TextBox txtPesCli;
+        private TextBox txtData;
         private Label label17;
-        private TextBox textBox13;
+        private TextBox txtIdos;
         private Label label19;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
-        private DataGridView dataGridView2;
+        private DataGridView dtgCli;
         private ComboBox cboSituacao;
         private Label label21;
-        private TextBox textBox17;
+        private TextBox txtNomeCli;
         private Label label20;
         private Label label25;
         private Label label24;
-        private TextBox textBox21;
-        private TextBox textBox20;
+        private TextBox txtDef;
+        private TextBox txtPlaca;
         private Label label23;
-        private TextBox textBox19;
-        private TextBox textBox18;
+        private TextBox txtModelo;
+        private TextBox txtFoneCli;
         private Label label22;
-        private TextBox textBox23;
-        private TextBox textBox22;
+        private TextBox txtCor;
+        private TextBox txtMarca;
         private Label label27;
         private Label label26;
         private Label label29;
         private Label label28;
-        private TextBox textBox25;
-        private TextBox textBox24;
-        private DataGridView dataGridView3;
+        private TextBox txtMotor;
+        private TextBox txtAno;
+        private DataGridView dtgOrcamentos;
         private TextBox textBox26;
         private Label label30;
         private Label label31;
@@ -1744,9 +1831,9 @@
         private Button button10;
         private Label label33;
         private Label label37;
-        private TextBox textBox28;
+        private TextBox txtMecanico;
         private Label label36;
-        private TextBox textBox27;
+        private TextBox txtObs;
         private DataGridView dataGridView4;
         private PictureBox pictureBox7;
         private Label label38;
@@ -1788,5 +1875,14 @@
         private DataGridViewTextBoxColumn estado;
         private DataGridViewTextBoxColumn cep;
         private DataGridViewTextBoxColumn email;
+        private GroupBox groupBox2;
+        private DataGridViewTextBoxColumn ColDesc;
+        private DataGridViewTextBoxColumn ColQuantidade;
+        private DataGridViewTextBoxColumn ColValUni;
+        private DataGridViewTextBoxColumn ColValTot;
+        private DataGridViewTextBoxColumn ColId;
+        private DataGridViewTextBoxColumn ColNomeCli;
+        private DataGridViewTextBoxColumn ColFoneCli;
+        private DataGridViewTextBoxColumn ColIdCli;
     }
 }

@@ -32,6 +32,8 @@ namespace SistemaOficina.Telas
 
         }
 
+        // Iniicio dos métodos da Aba Cliente
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             string nome = txtNome.Text;
@@ -82,6 +84,8 @@ namespace SistemaOficina.Telas
 
             // Chama o método do controlador para pesquisar e atualizar o dataGridView
             AtualizarDataGridViewPorCPF(cpfPesquisa);
+
+
         }
 
         private void AtualizarDataGridViewPorCPF(string cpf)
@@ -205,5 +209,57 @@ namespace SistemaOficina.Telas
                 MessageBox.Show($"Erro ao excluir cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        // Fim dos métodos da Aba Cliente
+
+
+        //Inicio dos métodos da Aba Orçamentos
+
+        private void txtPesCli_TextChanged(object sender, EventArgs e)
+        {
+            // Obtém o texto do campo txtPesCli
+            string cpfPesquisa = txtPesCli.Text;
+
+            // Chama o método do controlador para pesquisar e atualizar o dataGridView
+            AtualizarDataGridViewPorCPFOrçamentos(cpfPesquisa);
+        }
+
+        private void AtualizarDataGridViewPorCPFOrçamentos(string cpf)
+        {
+            // Chama o método do controlador para pesquisar na tabela tbclientes e obter apenas os campos desejados
+            var resultados = clienteController.PesquisarPorCPFOrçamentos(cpf);
+
+            // Antes de atribuir a origem de dados
+            dtgCli.AutoGenerateColumns = false;
+
+            // Mapeia os campos do DataGridView para os campos da tabela tbclientes
+            dtgCli.Columns["ColIdCli"].DataPropertyName = "Idcli";
+            dtgCli.Columns["ColNomeCli"].DataPropertyName = "Nome";
+            dtgCli.Columns["ColFoneCli"].DataPropertyName = "Fone";
+
+            // Atualiza o dataGridView com os resultados da pesquisa
+            dtgCli.DataSource = resultados;
+        }
+
+        private void dtgCli_SelectionChanged(object sender, EventArgs e)
+        {
+            PreencherCamposOrçamentosComDadosDaLinhaSelecionada();
+        }
+
+        private void PreencherCamposOrçamentosComDadosDaLinhaSelecionada()
+        {
+            // Verifica se há pelo menos uma linha selecionada
+            if (dtgCli.SelectedRows.Count > 0)
+            {
+                // Obtém a linha selecionada
+                DataGridViewRow linhaSelecionada = dtgCli.SelectedRows[0];
+
+                // Preenche os campos de texto com os dados da linha selecionada
+                txtIdCli.Text = linhaSelecionada.Cells["ColIdCli"].Value.ToString();
+                txtNomeCli.Text = linhaSelecionada.Cells["ColNomeCli"].Value.ToString();
+                txtFoneCli.Text = linhaSelecionada.Cells["ColFoneCli"].Value.ToString();
+            }
+        }
+
+        
     }
 }

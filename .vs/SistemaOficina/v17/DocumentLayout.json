@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\sistemaoficina\\telas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|solutionrelative:sistemaoficina\\telas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|d:\\documentos\\arquivo de clientes\\r\\ricardo mecanico\\sistemaoficina\\sistemaoficina\\telas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|solutionrelative:sistemaoficina\\telas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\sistemaoficina\\controllers\\orcamentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|solutionrelative:sistemaoficina\\controllers\\orcamentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\sistemaoficina\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|solutionrelative:sistemaoficina\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\sistemaoficina\\telas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|solutionrelative:sistemaoficina\\telas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\sistemaoficina\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|solutionrelative:sistemaoficina\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\sistemaoficina\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|solutionrelative:sistemaoficina\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\sistemaoficina\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|solutionrelative:sistemaoficina\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\sistemaoficina\\telas\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|solutionrelative:sistemaoficina\\telas\\telalogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\sistemaoficina\\models\\orcamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD72C308-F304-44CD-9B98-72F65FCF6F92}|SistemaOficina\\SistemaOficina.csproj|solutionrelative:sistemaoficina\\models\\orcamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,14 +54,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TelaLogin.cs [Projeto]",
-              "DocumentMoniker": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Telas\\TelaLogin.cs",
-              "RelativeDocumentMoniker": "SistemaOficina\\Telas\\TelaLogin.cs",
-              "ToolTip": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Telas\\TelaLogin.cs [Projeto]",
-              "RelativeToolTip": "SistemaOficina\\Telas\\TelaLogin.cs [Projeto]",
+              "DocumentIndex": 1,
+              "Title": "TelaPrincipal.cs",
+              "DocumentMoniker": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Telas\\TelaPrincipal.cs",
+              "RelativeDocumentMoniker": "SistemaOficina\\Telas\\TelaPrincipal.cs",
+              "ToolTip": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Telas\\TelaPrincipal.cs",
+              "RelativeToolTip": "SistemaOficina\\Telas\\TelaPrincipal.cs",
+              "ViewState": "AQIAAOAAAAAAAAAAAAAAwPYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T13:22:44.659Z"
+              "WhenOpened": "2024-03-11T16:14:31.721Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "SistemaOficina\\Controllers\\ClienteController.cs",
+              "ToolTip": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "SistemaOficina\\Controllers\\ClienteController.cs",
+              "ViewState": "AQIAAIYAAAAAAAAAAAAAwKEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T16:41:09.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "SistemaOficina\\Data\\DataContext.cs",
+              "ToolTip": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Data\\DataContext.cs",
+              "RelativeToolTip": "SistemaOficina\\Data\\DataContext.cs",
+              "ViewState": "AQIAALEAAAAAAAAAAAAAAGUAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T16:36:00.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrcamentoController.cs",
+              "DocumentMoniker": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Controllers\\OrcamentoController.cs",
+              "RelativeDocumentMoniker": "SistemaOficina\\Controllers\\OrcamentoController.cs",
+              "ToolTip": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Controllers\\OrcamentoController.cs",
+              "RelativeToolTip": "SistemaOficina\\Controllers\\OrcamentoController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T16:35:51.786Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -73,53 +118,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "SistemaOficina\\Data\\DataContext.cs",
-              "ToolTip": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Data\\DataContext.cs",
-              "RelativeToolTip": "SistemaOficina\\Data\\DataContext.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAAGAAAAAJAAAA",
+              "DocumentIndex": 6,
+              "Title": "Orcamento.cs",
+              "DocumentMoniker": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Models\\Orcamento.cs",
+              "RelativeDocumentMoniker": "SistemaOficina\\Models\\Orcamento.cs",
+              "ToolTip": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Models\\Orcamento.cs",
+              "RelativeToolTip": "SistemaOficina\\Models\\Orcamento.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACMAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-01T18:14:00.348Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T16:18:39.393Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TelaPrincipal.cs",
-              "DocumentMoniker": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Telas\\TelaPrincipal.cs",
-              "RelativeDocumentMoniker": "SistemaOficina\\Telas\\TelaPrincipal.cs",
-              "ToolTip": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Telas\\TelaPrincipal.cs",
-              "RelativeToolTip": "SistemaOficina\\Telas\\TelaPrincipal.cs",
-              "ViewState": "AQIAALIAAAAAAAAAAAAAwM0AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-01T18:13:12.438Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "SistemaOficina\\Controllers\\ClienteController.cs",
-              "ToolTip": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "SistemaOficina\\Controllers\\ClienteController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-01T18:12:25.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "TelaPrincipal.cs [Projeto]",
               "DocumentMoniker": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Telas\\TelaPrincipal.cs",
               "RelativeDocumentMoniker": "SistemaOficina\\Telas\\TelaPrincipal.cs",
               "ToolTip": "D:\\Documentos\\Arquivo de Clientes\\R\\Ricardo Mecanico\\SistemaOficina\\SistemaOficina\\Telas\\TelaPrincipal.cs [Projeto]",
               "RelativeToolTip": "SistemaOficina\\Telas\\TelaPrincipal.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-01T18:08:59.268Z",
+              "WhenOpened": "2024-03-11T15:51:27.642Z",
               "EditorCaption": " [Projeto]"
             }
           ]

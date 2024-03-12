@@ -29,72 +29,7 @@ namespace SistemaOficina.Data
             modelBuilder.Entity<Cliente>().HasKey(c => c.Idcli);
         }
 
-        public void AdicionarCliente(Cliente novoCliente)
-        {
-            try
-            {
-                // Adicionar um novo cliente ao contexto e salvar as alterações no banco de dados
-                TbClientes.Add(novoCliente);
-                SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                // Lidar com a exceção e exibir uma mensagem para o usuário
-                MessageBox.Show($"Erro ao adicionar cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        public void ExcluirCliente(int idCliente)
-        {
-            try
-            {
-                // Encontrar o cliente existente no contexto
-                var clienteExistente = TbClientes.Find(idCliente);
-
-                if (clienteExistente != null)
-                {
-                    // Solicitar confirmação do usuário antes de excluir
-                    var confirmacao = MessageBox.Show("Tem certeza de que deseja excluir este cliente?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (confirmacao == DialogResult.Yes)
-                    {
-                        // Iniciar transação (opcional, dependendo do contexto do banco de dados)
-                        using (var transaction = Database.BeginTransaction())
-                        {
-                            try
-                            {
-                                // Remover o cliente do contexto e salvar as alterações no banco de dados
-                                TbClientes.Remove(clienteExistente);
-                                SaveChanges();
-
-                                // Commit da transação (opcional, dependendo do contexto do banco de dados)
-                                transaction.Commit();
-
-                                MessageBox.Show("Cliente excluído com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            catch (Exception ex)
-                            {
-                                // Rollback da transação em caso de falha (opcional, dependendo do contexto do banco de dados)
-                                transaction.Rollback();
-
-                                // Lidar com a exceção e exibir uma mensagem para o usuário
-                                MessageBox.Show($"Erro ao excluir cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    // Cliente não encontrado, exibir uma mensagem para o usuário
-                    MessageBox.Show("Cliente não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                // Lidar com a exceção global e exibir uma mensagem para o usuário
-                MessageBox.Show($"Erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        // Início dos Métodos para a Janela de Login
 
 
         public void AdicionarUsuario(User novoUsuario)
@@ -163,6 +98,81 @@ namespace SistemaOficina.Data
                 MessageBox.Show($"Erro ao excluir usuário: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        //Fim dos Métodos da Janela de Login
+
+        // Inicio dos Métodos para a Aba Cliente
+
+        public void AdicionarCliente(Cliente novoCliente)
+        {
+            try
+            {
+                // Adicionar um novo cliente ao contexto e salvar as alterações no banco de dados
+                TbClientes.Add(novoCliente);
+                SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                // Lidar com a exceção e exibir uma mensagem para o usuário
+                MessageBox.Show($"Erro ao adicionar cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void ExcluirCliente(int idCliente)
+        {
+            try
+            {
+                // Encontrar o cliente existente no contexto
+                var clienteExistente = TbClientes.Find(idCliente);
+
+                if (clienteExistente != null)
+                {
+                    // Solicitar confirmação do usuário antes de excluir
+                    var confirmacao = MessageBox.Show("Tem certeza de que deseja excluir este cliente?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (confirmacao == DialogResult.Yes)
+                    {
+                        // Iniciar transação (opcional, dependendo do contexto do banco de dados)
+                        using (var transaction = Database.BeginTransaction())
+                        {
+                            try
+                            {
+                                // Remover o cliente do contexto e salvar as alterações no banco de dados
+                                TbClientes.Remove(clienteExistente);
+                                SaveChanges();
+
+                                // Commit da transação (opcional, dependendo do contexto do banco de dados)
+                                transaction.Commit();
+
+                                MessageBox.Show("Cliente excluído com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                // Rollback da transação em caso de falha (opcional, dependendo do contexto do banco de dados)
+                                transaction.Rollback();
+
+                                // Lidar com a exceção e exibir uma mensagem para o usuário
+                                MessageBox.Show($"Erro ao excluir cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    // Cliente não encontrado, exibir uma mensagem para o usuário
+                    MessageBox.Show("Cliente não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Lidar com a exceção global e exibir uma mensagem para o usuário
+                MessageBox.Show($"Erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Fim dos Métodos para a Aba Cliente
+
+        
     }
 
 
